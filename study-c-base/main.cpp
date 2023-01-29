@@ -5,6 +5,35 @@
 
 using namespace std;
 
+class A 
+{
+public:
+    A(int num)
+        :value(num)
+    {
+    };
+    ~A() {
+
+    };
+    
+    A(const A& copy) {
+        value = copy.value;
+        cout << "copy value : " << value << endl;
+    };
+
+public:
+    int value = 0;
+};
+
+void F(A& a) {
+    try {
+        A k = a[20];
+    }
+    catch (out_of_range) {
+        cout << "Out of Range" << endl;
+    }
+}
+
 int main()
 {
     int i = 20.2; 
@@ -32,6 +61,7 @@ int main()
 
     int c1 [10] { 1,2,3,4,5,6,7 };
 
+    //범위 기반 for문, 첫번째 부터 마지막까지 복사본을 저장한 후 출력을 진행한다.
     for (int i : c1) {
         cout << i << endl;
     }
@@ -40,6 +70,24 @@ int main()
         cout << i << endl;
     }
 
+    //범위 기반 for문 Test Create
+    A array[3] = { A(1), A(2), A(3) };
+    for (auto a : array) {
+        cout << a.value << endl;
+    }
 
-    std::cout << "Test" << std::endl;
+    //1개 복사후 진행, 1개 복사 후 진행
+    for (A a : array) {
+        cout << a.value << endl;
+    }
+
+    //복사 하지 않음
+    for (A& a : array) {
+        cout << a.value << endl;
+    }
+    
+    //Try Catch 예외 처리
+    F(array);
+
+    wcout << "이거 왜 안돼" << endl;
 }
