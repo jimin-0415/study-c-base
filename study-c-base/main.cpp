@@ -5,29 +5,20 @@
 
 #pragma execution_character_set("utf-8")
 
-#include "R_Value.h"
+#include "SmartPointer.h"
 
 //표준 입출력 라이브러리
 
 using namespace std;
 
-void F(A* a) {
-    
-
-    try {
-        A k = a[20];
-    }
-    catch (out_of_range) {
-        cout << "Out of Range" << endl;
-    }
-}
-
 int main()
 {
+    SmartPointer a;
+    a.main();
+
     //SetConsoleOutputCP(CP_UTF8);
-    wcout << L"이거 왜 안돼";
-    R_Value r;
-    r.main();
+     
+
 
     //int i = 20.2; 
     ////int i2 { 20.2 };//리스트 양식 초기화 시 부동 소수점이기 때문에 에러

@@ -21,9 +21,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="R_Value.cpp" />
+    <ClCompile Include="SmartPointer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="R_Value.h" />
+    <ClInclude Include="SmartPointer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
